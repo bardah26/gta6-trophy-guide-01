@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: every official name, description and grade, a guide to each in the author's own words with cited sources, a checklist saved in your browser, filters, a spoiler setting and a roadmap to the platinum.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Atlas</h1>
+    <p class="sub">Every trophy, guided and tracked — offline, in your browser, no account, no network.</p>
+  </div>
+  <div class="progress" id="progress" aria-live="polite">
+    <div class="progress-line"><span id="progress-count">0 / 55 earned</span><span id="progress-pct">0%</span></div>
+    <div class="bar"><div class="fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="grades" id="grade-counts"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" id="tab-checklist" class="tab active" data-view="checklist">Checklist</button>
+  <button type="button" id="tab-roadmap" class="tab" data-view="roadmap">Roadmap to Platinum</button>
+  <p class="tab-note" id="missable-note">⚠ 1 missable trophy — <a href="#trophy-28">Positive Mental Attitude</a> (Chapter 1). No mission replay: keep a manual save at the start of every chapter.</p>
+</nav>
+
+<section class="toolbar" aria-label="Filters and tools">
+  <label class="field search-field">Search
+    <input type="search" id="search" placeholder="Trophy name or description…" autocomplete="off">
+  </label>
+  <label class="field">Grade
+    <select id="filter-grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="field">Kind
+    <select id="filter-kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="stranger">Strangers</option>
+      <option value="activity">Activities</option>
+      <option value="collectible">Collectibles</option>
+      <option value="exploration">Exploration</option>
+      <option value="combat">Combat &amp; crime</option>
+      <option value="economy">Money &amp; property</option>
+      <option value="secret">Secrets</option>
+      <option value="completion">Completion</option>
+    </select>
+  </label>
+  <label class="field">Status
+    <select id="filter-status">
+      <option value="all">Earned &amp; remaining</option>
+      <option value="earned">Earned only</option>
+      <option value="remaining">Remaining only</option>
+    </select>
+  </label>
+  <label class="check"><input type="checkbox" id="filter-missable"> Missable only</label>
+  <label class="check spoiler-check"><input type="checkbox" id="spoiler-toggle"> Hide story spoilers</label>
+  <span class="tools">
+    <button type="button" id="export-btn">Export progress</button>
+    <label class="import-btn" for="import-file">Import progress</label>
+    <input type="file" id="import-file" accept="application/json,.json" hidden>
+    <button type="button" id="reset-btn" class="danger">Reset</button>
+  </span>
+</section>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="layout">
+      <div class="list-col">
+        <p class="list-meta" id="list-meta"></p>
+        <ul class="trophy-list" id="trophy-list"></ul>
+      </div>
+      <aside class="detail" id="detail" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="roadmap-intro">PowerPyx rates the set 4/10 and about 200 hours, one playthrough. Work the stages in order; the checklist in the Progress menu only opens after the story, and the 100% Gold sits at the end of it all. Cheats disable trophies and saving, so keep them off for the whole run.</p>
+    <ol class="stages" id="stages"></ol>
+    <p class="roadmap-foot">Sources: PowerPyx — GTA 6 Trophy Guide &amp; Roadmap (18 Nov 2026) and PowerPyx — GTA 6 100% Completion Checklist Guide. Trophy names, descriptions and grades are the platform list's own (Exophase, as reported by Push Square).</p>
+  </section>
+</main>
+
+<footer>
+  <p>Guides are written for this entry, in the author's own words; each cites its sources beside it, and nothing is copied from another guide. Trophy names, descriptions and grades are shown as the platform list publishes them. Works fully offline — every file it loads lives under app/.</p>
+  <p>Leonida Trophy Atlas is an unofficial fan guide. Grand Theft Auto, GTA and Rockstar Games are trademarks of their owners; no Rockstar logo, artwork or asset is used here.</p>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

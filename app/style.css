@@ -1,0 +1,230 @@
+/* Leonida Trophy Atlas — a Vice-neon look of our own: no Rockstar artwork, no external files. */
+@font-face {
+  font-family: "Anton";
+  src: url("fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #0d0b1e;
+  --panel: #17132e;
+  --panel-2: #1f1840;
+  --line: #332a5e;
+  --text: #f2eefc;
+  --muted: #b3a9d6;
+  --pink: #ff2e88;
+  --orange: #ff9a3d;
+  --teal: #2de2c5;
+  --gold: #f5c542;
+  --silver: #c9ccd6;
+  --bronze: #e0915a;
+  --platinum: #8fe3ff;
+  --danger: #ff5d5d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+a { color: var(--teal); }
+
+/* ---------- header ---------- */
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: end;
+  justify-content: space-between;
+  padding: 28px 28px 18px;
+  background:
+    linear-gradient(100deg, rgba(255, 46, 136, .38), rgba(255, 154, 61, .22) 55%, rgba(45, 226, 197, .16)),
+    var(--panel);
+  border-bottom: 3px solid var(--pink);
+}
+
+.kicker {
+  margin: 0 0 6px;
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+h1 {
+  margin: 0;
+  font-family: "Anton", system-ui, sans-serif;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.sub { margin: 8px 0 0; color: var(--muted); max-width: 560px; }
+
+.progress { min-width: 300px; flex: 1 1 320px; max-width: 460px; }
+.progress-line { display: flex; justify-content: space-between; font-weight: 700; }
+.bar { height: 12px; margin-top: 6px; background: #0a0817; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
+.fill { height: 100%; background: linear-gradient(90deg, var(--pink), var(--orange)); transition: width .3s; }
+.grades { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; font-size: 13px; color: var(--muted); }
+.grades b { color: var(--text); }
+
+/* ---------- tabs ---------- */
+.tabs { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 12px 28px; background: var(--panel-2); border-bottom: 1px solid var(--line); }
+.tab {
+  font-family: "Anton", system-ui, sans-serif;
+  font-size: 17px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.tab.active { color: #12081f; background: var(--teal); border-color: var(--teal); }
+.tab-note { margin: 0 0 0 auto; font-size: 13px; color: #ffd9a8; max-width: 520px; }
+
+/* ---------- toolbar ---------- */
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: end;
+  padding: 14px 28px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+.field { display: grid; gap: 4px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.search-field { flex: 1 1 220px; }
+input[type="search"], select {
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: #0a0817;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.check { display: flex; gap: 6px; align-items: center; font-size: 14px; padding-bottom: 8px; cursor: pointer; }
+.spoiler-check { color: #ffd9a8; }
+.tools { display: flex; gap: 8px; margin-left: auto; align-items: center; }
+button, .import-btn {
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+button:hover, .import-btn:hover { border-color: var(--teal); }
+button.danger { color: #ffb3b3; border-color: #5e2a2a; }
+
+/* ---------- layout ---------- */
+main { padding: 20px 28px 28px; }
+.view h2 { font-family: "Anton", system-ui, sans-serif; font-size: 28px; text-transform: uppercase; letter-spacing: .03em; margin: 4px 0 8px; }
+.layout { display: grid; grid-template-columns: minmax(0, 7fr) minmax(300px, 5fr); gap: 20px; align-items: start; }
+.list-meta { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+
+/* ---------- trophy list ---------- */
+.trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.trophy {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.trophy:hover { border-color: var(--pink); }
+.trophy.selected { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal); }
+.trophy.earned { opacity: .72; }
+.trophy input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--teal); cursor: pointer; }
+.trophy .t-name { font-weight: 700; font-size: 16px; }
+.trophy.earned .t-name { text-decoration: line-through; text-decoration-thickness: 2px; }
+.trophy .t-desc { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.trophy .t-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.tag { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 99px; padding: 2px 8px; color: var(--muted); }
+.tag.missable { color: #1a0b00; background: var(--orange); border-color: var(--orange); font-weight: 700; }
+.tag.stage { color: var(--teal); border-color: var(--teal); }
+
+.grade-badge {
+  font-family: "Anton", system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+.grade-platinum { color: #06222e; background: var(--platinum); }
+.grade-gold { color: #2b1d00; background: var(--gold); }
+.grade-silver { color: #1c1c22; background: var(--silver); }
+.grade-bronze { color: #2b1503; background: var(--bronze); }
+
+/* ---------- detail panel ---------- */
+.detail {
+  position: sticky;
+  top: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+}
+.detail h2 { font-size: 24px; margin: 8px 0 4px; }
+.detail .official { color: var(--muted); font-style: italic; margin: 0 0 10px; }
+.detail .guide { margin: 12px 0; }
+.detail .warn {
+  background: #2b1503;
+  border: 1px solid var(--orange);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 12px 0;
+  font-size: 14px;
+}
+.detail .warn b { color: var(--orange); }
+.detail h3 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 16px 0 6px; }
+.detail .sources { margin: 0; padding-left: 18px; font-size: 14px; }
+.detail .sources li { margin-bottom: 4px; }
+.detail .empty { color: var(--muted); }
+.detail .locked { color: #ffd9a8; }
+
+/* ---------- roadmap ---------- */
+.roadmap-intro { color: var(--muted); max-width: 760px; }
+.stages { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; }
+.stages > li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.stages h3 { margin: 0 0 4px; font-family: "Anton", system-ui, sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: .03em; }
+.stages h3 .time { float: right; font-family: system-ui, sans-serif; font-size: 13px; color: var(--orange); letter-spacing: 0; text-transform: none; }
+.stages p { margin: 0 0 10px; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-size: 13px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 4px 10px;
+  background: var(--panel-2);
+  cursor: pointer;
+}
+.chip.done { text-decoration: line-through; opacity: .65; }
+.chip .g { font-weight: 700; }
+.roadmap-foot { color: var(--muted); font-size: 13px; margin-top: 16px; }
+
+footer { padding: 8px 28px 28px; color: var(--muted); font-size: 13px; }
+footer p { max-width: 860px; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .detail { position: static; }
+  h1 { font-size: 34px; }
+  .tab-note { margin-left: 0; }
+}
